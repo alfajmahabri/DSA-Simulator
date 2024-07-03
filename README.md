@@ -22,3 +22,6 @@ Clone the repository:
 ```bash
 git clone https://github.com/alfajmahabri/dsa-simulator.git
 cd dsa-simulator
+```
+## Contributing
+Contributions are welcome! If you'd like to contribute to DSA Simulator, please fork the repository and create a pull request with your changes.
