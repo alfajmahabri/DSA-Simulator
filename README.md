@@ -4,7 +4,7 @@
 
 DSA Simulator is a terminal-based application designed to simulate various Data Structures and Algorithms (DSA) operations. It includes algorithms ranging from searching to mapping and tree traversal.
 
-##Language :- Java
+## Language :- Java
 
 ## Features
 
