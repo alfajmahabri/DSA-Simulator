@@ -1,19 +1,21 @@
 import Recursion.*;
 import Searching.*;
+import Sort.*;
 import java.util.*;
 
 public class Main{
     public static void main(String[] args){
         System.out.println("Welcome to My DSA Library");
         Scanner sc = new Scanner(System.in);
-        while (true) {
+        boolean conditions=true;
+        while (conditions) {
             System.out.println("Main Menu");
             System.out.println("1. Searching Algorithm");
             System.out.println("2. Sorting Algorithm");
             System.out.println("3. Stack");
             System.out.println("4. Recursion");
-            System.out.println("5. Exit");
-
+            System.out.println("0. Exit");
+            int [] arr ;
             int option=sc.nextInt();
 
             switch (option) {
@@ -25,7 +27,7 @@ public class Main{
                     int option1=sc.nextInt();
                     switch (option1) {
                         case 1:
-                            int [] arr = FillArray();
+                            arr = FillArray();
                             Linear l=new Linear();
                             System.out.println("Enter element to search");
                             int search = sc.nextInt();
@@ -48,10 +50,46 @@ public class Main{
                 
                 case 2:
                     System.out.println("SORTING ALGORITHM");
+                    System.out.println("1. Bubble Sort");
+                    System.out.println("2. Selection Sort");
+                    System.out.println("3. Insertion Sort");
+                    option1 =sc.nextInt();
+                    switch (option1) {
+                        case 1:
+                            System.out.println("Bubble Sort");
+                            arr = FillArray();
+                            System.out.println("Sorting elements");
+                            BubbleSort b1=new BubbleSort(arr);
+                            break;
+                        case 2:
+                            System.out.println("Selection Sort");
+                            arr = FillArray();
+                            SelectionSort s = new SelectionSort(arr);
+                            break;
+                        case 3:
+                            System.out.println("Insertion Sort");
+                            break;
+                    }
                     break;
             
                     // END OF CASE 2 SORTING ALGORITHM
 
+                case 3:
+                    System.out.println("Stack Operations");
+                    arr=FillArray();
+                    System.out.println("1. Push");
+                    System.out.println("2. Pop");
+                    System.out.println("3. Size");
+                    System.out.println("4. Display");
+                    option1 = sc.nextInt();
+                    switch (option1) {
+                        case 1:
+                            System.out.println("Push Operation");
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
+                    
                 case 4:
                     System.out.println("Recursion");
                     System.out.println("1. Factorial");
@@ -74,7 +112,9 @@ public class Main{
                     break;
                     // END OF CASE 4 RECURSION
                 
-                default:
+                    // EXIT
+                case 0:
+                    conditions=false;
                     break;
             }
 
