@@ -68,6 +68,8 @@ public class Main{
                             break;
                         case 3:
                             System.out.println("Insertion Sort");
+                            arr = FillArray();
+                            InsertionSort i = new InsertionSort(arr);
                             break;
                     }
                     break;
