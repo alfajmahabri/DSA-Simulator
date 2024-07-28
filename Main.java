@@ -53,6 +53,7 @@ public class Main{
                     System.out.println("1. Bubble Sort");
                     System.out.println("2. Selection Sort");
                     System.out.println("3. Insertion Sort");
+                    System.out.println("4. Quick Sort");
                     option1 =sc.nextInt();
                     switch (option1) {
                         case 1:
@@ -70,6 +71,12 @@ public class Main{
                             System.out.println("Insertion Sort");
                             arr = FillArray();
                             InsertionSort i = new InsertionSort(arr);
+                            break;
+                        case 4:
+                            System.out.println("Quick Sort");
+                            arr= FillArray();
+                            QuickSort.QuickSort(arr, 0, arr.length-1);
+                            QuickSort.printArray(arr);
                             break;
                     }
                     break;
