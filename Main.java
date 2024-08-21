@@ -54,6 +54,7 @@ public class Main{
                     System.out.println("2. Selection Sort");
                     System.out.println("3. Insertion Sort");
                     System.out.println("4. Quick Sort");
+                    System.out.println("5. Merge Sort");
                     option1 =sc.nextInt();
                     switch (option1) {
                         case 1:
@@ -78,6 +79,11 @@ public class Main{
                             QuickSort.QuickSort(arr, 0, arr.length-1);
                             QuickSort.printArray(arr);
                             break;
+                        case 5:
+                            System.out.println("Merge sort");
+                            arr= FillArray();
+                            MergeSort.mergeSort(arr, 0, arr.length - 1);
+                            MergeSort.printArray(arr);
                     }
                     break;
             
