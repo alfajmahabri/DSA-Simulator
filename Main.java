@@ -1,6 +1,8 @@
 import Recursion.*;
 import Searching.*;
 import Sort.*;
+import Queue.*;
+import Stack.StackArr;
 import java.util.*;
 
 public class Main{
@@ -14,6 +16,8 @@ public class Main{
             System.out.println("2. Sorting Algorithm");
             System.out.println("3. Stack");
             System.out.println("4. Recursion");
+            System.out.println("5. Linked List");
+            System.out.println("6. Queue");
             System.out.println("0. Exit");
             int [] arr ;
             int option=sc.nextInt();
@@ -88,22 +92,57 @@ public class Main{
                     break;
             
                     // END OF CASE 2 SORTING ALGORITHM
+                    // START OF CASE 3 STACK OPERATION
 
-                case 3:
+                    case 3:
                     System.out.println("Stack Operations");
-                    arr=FillArray();
-                    System.out.println("1. Push");
-                    System.out.println("2. Pop");
-                    System.out.println("3. Size");
-                    System.out.println("4. Display");
-                    option1 = sc.nextInt();
-                    switch (option1) {
-                        case 1:
-                            System.out.println("Push Operation");
-                            break;
-                        default:
-                            throw new AssertionError();
+                    System.out.println("Enter size of stack:");
+                    int stackSize = sc.nextInt();
+                    StackArr stack = new StackArr(stackSize); // Create stack object
+                    boolean stackConditions = true;
+                    
+                    while (stackConditions) {
+                        System.out.println("1. Push");
+                        System.out.println("2. Pop");
+                        System.out.println("3. Peek");
+                        System.out.println("4. Size");
+                        System.out.println("5. Display");
+                        System.out.println("6. Back to Main Menu");
+                        int stackOption = sc.nextInt();
+                        
+                        switch (stackOption) {
+                            case 1:
+                                System.out.println("Enter number to push:");
+                                int numToPush = sc.nextInt();
+                                stack.push(numToPush);
+                                break;
+                            case 2:
+                                int poppedValue = stack.pop();
+                                if (poppedValue != -1) {
+                                    System.out.println("Popped: " + poppedValue);
+                                }
+                                break;
+                            case 3:
+                                int peekValue = stack.peek();
+                                if (peekValue != -1) {
+                                    System.out.println("Top element: " + peekValue);
+                                }
+                                break;
+                            case 4:
+                                System.out.println("Stack size: " + stack.size());
+                                break;
+                            case 5:
+                                stack.display();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                break;
+                            case 6:
+                                stackConditions = false; // Exit stack operations
+                                break;
+                            default:
+                                System.out.println("Invalid option.");
+                        }
                     }
+                    break;
+                
                     
                 case 4:
                     System.out.println("Recursion");
@@ -127,6 +166,72 @@ public class Main{
                     break;
                     // END OF CASE 4 RECURSION
                 
+                case 5:
+                    System.out.println("Linked List");
+                    System.out.println("1. Singly Linked List");
+                    System.out.println("2. Doubly Linked List");
+                    option1 =sc.nextInt();
+                    switch (option1) {
+                        case 1:
+                            
+                            break;
+                        case 2:
+                            
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                    // END OF CASE 5 
+                    case 6:
+                    System.out.println("Queue");
+                    System.out.println("Stack Operations");
+                    System.out.println("Enter size of stack:");
+                    stackSize = sc.nextInt();
+                    stackConditions = true;
+                    Queue queue = new Queue();
+                    while (stackConditions) {
+                        System.out.println("1. Push");
+                        System.out.println("2. Pop");
+                        System.out.println("3. Peek");
+                        System.out.println("4. Size");
+                        System.out.println("5. Display");
+                        System.out.println("6. Back to Main Menu");
+                        int stackOption = sc.nextInt();
+                        
+                        switch (stackOption) {
+                            case 1:
+                                System.out.println("Enter number to push:");
+                                int numToPush = sc.nextInt();
+                                queue.push(numToPush);
+                                break;
+                            case 2:
+                                int poppedValue = queue.pop();
+                                if (poppedValue != -1) {
+                                    System.out.println("Popped: " + poppedValue);
+                                }
+                                break;
+                            case 3:
+                                int peekValue = queue.peek();
+                                if (peekValue != -1) {
+                                    System.out.println("Top element: " + peekValue);
+                                }
+                                break;
+                            case 4:
+                                System.out.println("Stack size: " + queue.size());
+                                break;
+                            case 5:
+                                queue.display();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                break;
+                            case 6:
+                                stackConditions = false; // Exit stack operations
+                                break;
+                            default:
+                                System.out.println("Invalid option.");
+                        }
+                    }
+                    break;
+                    // END OF CASE 6
                     // EXIT
                 case 0:
                     conditions=false;
